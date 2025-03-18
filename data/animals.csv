@@ -1,41 +1,26 @@
-Species,Breed,Price,Reserved
-Cat,Maine Coon,1200,true
-Cat,Siamese,900,false
-Cat,British Shorthair,500,true
-Cat,Ragdoll,1300,false
-Cat,Bengal,1400,true
-Cat,Sphynx,1500,false
-Cat,Persian,1250,true
-Cat,Abyssinian,1150,false
-Cat,Scottish Fold,1350,true
-Cat,American Shorthair,1000,false
-Dog,Golden Retriever,1500,true
-Dog,German Shepherd,1600,false
-Dog,Labrador Retriever,1400,true
-Dog,French Bulldog,2000,false
-Dog,Siberian Husky,1700,true
-Dog,Beagle,1300,false
-Dog,Poodle,1800,true
-Dog,Dachshund,1200,false
-Dog,Border Collie,1600,true
-Dog,Shiba Inu,1900,false
-Parrot,African Grey,2500,true
-Parrot,Macaw,3000,false
-Parrot,Cockatiel,400,true
-Parrot,Parakeet,350,false
-Parrot,Amazon Parrot,2200,true
-Parrot,Eclectus,2700,false
-Parrot,Conure,600,true
-Parrot,Hyacinth Macaw,5000,false
-Parrot,Lovebird,300,true
-Parrot,Quaker Parrot,450,false
-Rabbit,Holland Lop,250,true
-Rabbit,Netherland Dwarf,300,false
-Rabbit,Flemish Giant,400,true
-Rabbit,Mini Rex,350,false
-Rabbit,Angora,500,true
-Rabbit,Harlequin,450,false
-Rabbit,Dutch,275,true
-Rabbit,English Lop,325,false
-Rabbit,Chinchilla,375,true
-Rabbit,Silver Fox,425,false
+Species,Breed,Price,Status
+Cat,Maine Coon,1200,available
+Cat,Siamese,900,reserved
+Cat,British Shorthair,500,available
+Cat,Ragdoll,1300,reserved
+Cat,Bengal,1400,available
+Cat,Sphynx,1500,reserved
+Dog,Golden Retriever,1500,available
+Dog,Labrador Retriever,1400,available
+Dog,French Bulldog,2000,reserved
+Dog,Poodle,1800,available
+Dog,Dachshund,1200,reserved
+Parrot,Parakeet,350,reserved
+Parrot,Amazon Parrot,2200,available
+Parrot,Eclectus,2700,reserved
+Parrot,Conure,600,available
+Parrot,Hyacinth Macaw,5000,reserved
+Parrot,Lovebird,300,available
+Parrot,Quaker Parrot,450,reserved
+Rabbit,Holland Lop,250,available
+Rabbit,Angora,500,reserved
+Rabbit,Harlequin,450,available
+Rabbit,Dutch,275,available
+Rabbit,English Lop,325,reserved
+
+ 
