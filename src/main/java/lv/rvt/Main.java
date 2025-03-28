@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-       ProductManager manager = new ProductManager();
-       manager.showProducts(); 
+      // ProductManager product = new ProductManager();
+       //product.showProducts(); 
+       AnimalManager animal = new AnimalManager();
+       animal.showAnimals(); 
     }
 }
 
