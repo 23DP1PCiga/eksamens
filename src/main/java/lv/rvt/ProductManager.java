@@ -6,38 +6,48 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import lv.rvt.tools.Helper;
+
 public class ProductManager {
-private List<Product> products;
-private static final String FILE_NAME = "products.csv";
+    private List<Product> products;
 
-public ProductManager(){
-    products = new ArrayList<>();
-    loadFromCSV();
-}
+    public ProductManager() {
+        products = new ArrayList<>();
+        loadProducts();
+    }
 
-public void showAnimals(){
-    
-}
-
-public void loadFromCSV() {
-    products.clear(); 
-    try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
-        String line;
-        reader.readLine(); 
-        while ((line = reader.readLine()) != null) {
-            String[] data = line.split(",");
-            if (data.length == 4) {
-                String name = data[0];
-                String category = data[1];
-                double price = Double.parseDouble(data[2]);
-                boolean inStock = Boolean.parseBoolean(data[3]);
-                products.add(new Product(name, category, price, inStock));
+    public void loadProducts() {
+        products.clear();
+        try (BufferedReader reader = Helper.getReader("products.csv")) {
+            reader.readLine(); 
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(","); 
+                if (parts.length == 4) {
+                    String name = parts[0].trim();
+                    String category = parts[1].trim();
+                    double price = Double.parseDouble(parts[2].trim());
+                    boolean inStock = Boolean.parseBoolean(parts[3].trim());
+                    products.add(new Product(name, category, price, inStock));
+                }
             }
+        } catch (IOException e) {
+            System.out.println("" + e.getMessage());
         }
-    } catch (IOException e) {
-        System.out.println("");
+    }
+
+    public void showProducts() {
+        System.out.println("---------------------------------------------------------------------");
+        System.out.printf("| %-30s | %-12s | %-6s | %-8s |\n", 
+                "Name", "Category", "Price", "In Stock");
+        System.out.println("---------------------------------------------------------------------");
+
+        for (Product product : products) { 
+            System.out.printf("| %-30s | %-12s | %-6.2f | %-8s |\n",
+                    product.getName(), product.getCategory(), 
+                    product.getPrice(), product.inStock());
+        }
+
+        System.out.println("---------------------------------------------------------------------");
     }
 }
-
-       
-}   

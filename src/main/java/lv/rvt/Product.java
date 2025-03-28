@@ -25,6 +25,10 @@ public double getPrice(){
     return this.price;
 }
 
+public boolean inStock(){
+    return this.inStock;
+}
+
 public String toCSV(){
     return this.name +','+ this.category +','+ this.price +','+ this.inStock;
 }
@@ -33,4 +37,6 @@ public void productInfo(){
     String productStatus = inStock? "in stock" : "out of stock";
     System.out.println("Product name: " + this.name + " , category: " + this.category + " , price: " + this.price  + " , status: " + productStatus);
 }
+
+
 }
