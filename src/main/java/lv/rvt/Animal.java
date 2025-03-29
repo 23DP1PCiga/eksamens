@@ -1,16 +1,22 @@
 package lv.rvt;
 
 public class Animal {
+    private int number;
     private String species;
     private String breed;
     private double price;
     protected boolean reserved;
 
-    public Animal(String species, String breed, double price, boolean reserved) {
+    public Animal(int number,String species, String breed, double price, boolean reserved) {
+        this.number = number;
         this.species = species;
         this.breed = breed;
         this.price = price;
         this.reserved = reserved;
+    }
+
+    public int getNumber(){
+        return this.number;
     }
 
     public String getSpecies() {
@@ -34,11 +40,16 @@ public class Animal {
     }
 
     public String toCSV() {
-        return species + ", " + breed + ", " + price + ", " + reserved;
+        return number +','+species + ", " + breed + ", " + price + ", " + reserved;
     }
 
     public void animalInfo() {
         String animalStatus = reserved ? "reserved" : "available";
-        System.out.println("Species: " + species + ", Breed: " + breed + ", Price: " + price + ", Status: " + animalStatus);
+        System.out.println("Nr." + number +"Species: " + species + ", Breed: " + breed + ", Price: " + price + ", Status: " + animalStatus);
+    }
+
+    public static void showAnimals() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'showAnimals'");
     }
 }
