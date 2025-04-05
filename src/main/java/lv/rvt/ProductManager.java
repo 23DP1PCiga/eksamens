@@ -22,13 +22,12 @@ public class ProductManager {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(","); 
-                if (parts.length == 5) {
+                if (parts.length == 4) {
                     Integer number = Integer.parseInt(parts[0].trim());
                     String name = parts[1].trim();
                     String category = parts[2].trim();
                     double price = Double.parseDouble(parts[3].trim());
-                    boolean inStock = Boolean.parseBoolean(parts[4].trim());
-                    products.add(new Product(number, name, category, price, inStock));
+                    products.add(new Product(number, name, category, price));
                 }
             }
         } catch (IOException e) {
@@ -37,17 +36,17 @@ public class ProductManager {
     }
 
     public void showProducts() {
-        System.out.println("--------------------------------------------------------------------");
-        System.out.printf("| %3s | %-23s | %-12s | %-6s | %-8s |\n", 
-                "Nr.","Name", "Category", "Price", "In Stock");
-        System.out.println("--------------------------------------------------------------------");
+        System.out.println("---------------------------------------------------------");
+        System.out.printf("| %3s | %-23s | %-12s | %-6s |\n", 
+                "Nr.","Name", "Category", "Price");
+        System.out.println("---------------------------------------------------------");
 
         for (Product product : products) { 
-            System.out.printf("| %3d | %-23s | %-12s | %-6.2f | %-8s |\n",
+            System.out.printf("| %3d | %-23s | %-12s | %-6.2f |\n",
                     product.getNumber(),product.getName(), product.getCategory(), 
-                    product.getPrice(), product.inStock());
+                    product.getPrice());
         }
 
-        System.out.println("--------------------------------------------------------------------"); 
+        System.out.println("---------------------------------------------------------"); 
     }
 }

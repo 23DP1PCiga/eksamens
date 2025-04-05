@@ -1,44 +1,44 @@
-Nr,Name,Category,Price,InStock
-1,Dog Shampoo,Care,12.99,true
-2,Cat Shampoo,Care,10.49,true
-3,Toothpaste for Pets,Care,5.49,true
-4,Nail Clippers,Care,5.99,false
-5,Paw Balm,Care,4.99,true
-6,Flea and Tick Treatment,Care,15.49,false
-7,Dog dental Chews,Care,9.99,true
-8,Cage Cleaner,Care,7.99,true
-9,Cat Bed,Accessories,19.99,true
-10,Scratching Post,Accessories,29.99,false
-11,Cat Collar with Bell,Accessories,5.99,true
-12,Cat Window Perch,Accessories,24.99,true
-13,Travel Carrier,Accessories,34.99,true
-14,Automatic Feeder,Accessories,49.99,false
-15,Dog Leash,Accessories,12.99,true
-16,Dog Collar,Accessories,9.99,false
-17,Dog Chew Toy,Accessories,7.49,true
-18,Dog Harness,Accessories,19.99,true
-19,Plush Bed,Accessories,24.99,false
-20,Rope Toy,Accessories,5.99,true
-21,Car Seat Cover,Accessories,29.99,false
-22,Floating Fetch Toy,Accessories,11.99,true
-23,Parrot Perch,Accessories,12.99,true
-24,Parrot Swing Toy,Accessories,9.49,true
-25,Bird Cage(medium),Accessories,39.99,true
-26,Bird Cage(large),Accessories,54.99,true
-27,Food Bowl,Accessories,8.49,true
-28,Rabbit Chew Sticks,Accessories,5.49,true
-29,Rabbit Playpen,Accessories,29.99,false
-30,Dry Cat Food,Feed,24.99,true
-31,Wet Cat Food,Feed,18.99,false
-32,Cat Treats,Feed,6.49,true
-33,Dry Dog Food,Feed,24.99,true
-34,Wet Dog Food,Feed,18.99,true
-35,Dog Treats,Feed,6.49,true
-36,Dog Dental Sticks,Feed,9.99,false
-37,Parrot Pellets,Feed,14.99,true
-38,Parrot Fruit & Nut Mix,Feed,12.49,false
-39,Rabbit Pellet Food,Feed,14.49,false
-40,Rabbit Dried Herbs,Feed,9.99,true
+Nr,Name,Category,Price
+1,Dog Shampoo,Care,12.99
+2,Cat Shampoo,Care,10.49
+3,Toothpaste for Pets,Care,5.49
+4,Nail Clippers,Care,5.99
+5,Paw Balm,Care,4.99
+6,Flea and Tick Treatment,Care,15.49
+7,Dog dental Chews,Care,9.99
+8,Cage Cleaner,Care,7.99
+9,Cat Bed,Accessories,19.99
+10,Scratching Post,Accessories,29.99
+11,Cat Collar with Bell,Accessories,5.99
+12,Cat Window Perch,Accessories,24.99
+13,Travel Carrier,Accessories,34.99
+14,Automatic Feeder,Accessories,49.99
+15,Dog Leash,Accessories,12.99
+16,Dog Collar,Accessories,9.99
+17,Dog Chew Toy,Accessories,7.49
+18,Dog Harness,Accessories,19.99
+19,Plush Bed,Accessories,24.99
+20,Rope Toy,Accessories,5.99
+21,Car Seat Cover,Accessories,29.99
+22,Floating Fetch Toy,Accessories,11.99
+23,Parrot Perch,Accessories,12.99
+24,Parrot Swing Toy,Accessories,9.49
+25,Bird Cage(medium),Accessories,39.99
+26,Bird Cage(large),Accessories,54.99
+27,Food Bowl,Accessories,8.49
+28,Rabbit Chew Sticks,Accessories,5.49
+29,Rabbit Playpen,Accessories,29.99
+30,Dry Cat Food,Feed,24.99
+31,Wet Cat Food,Feed,18.99
+32,Cat Treats,Feed,6.49
+33,Dry Dog Food,Feed,24.99
+34,Wet Dog Food,Feed,18.99
+35,Dog Treats,Feed,6.49
+36,Dog Dental Sticks,Feed,9.99
+37,Parrot Pellets,Feed,14.99
+38,Parrot Fruit & Nut Mix,Feed,12.49
+39,Rabbit Pellet Food,Feed,14.49
+40,Rabbit Dried Herbs,Feed,9.99
 
 
 
