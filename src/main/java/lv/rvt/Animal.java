@@ -48,8 +48,5 @@ public class Animal {
         System.out.println("Nr." + number +"Species: " + species + ", Breed: " + breed + ", Price: " + price + ", Status: " + animalStatus);
     }
 
-    public static void showAnimals() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'showAnimals'");
-    }
+    
 }

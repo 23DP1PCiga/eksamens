@@ -27,7 +27,7 @@ public class AnimalManager {
                     String species = parts[1].trim();
                     String breed = parts[2].trim();
                     double price = Double.parseDouble(parts[3].trim());
-                    boolean reserved = Boolean.parseBoolean(parts[4].trim());
+                    boolean reserved = parts[4].trim().equalsIgnoreCase("reserved");
                     animals.add(new Animal(number, species, breed, price, reserved));
                 }
             }
@@ -36,20 +36,42 @@ public class AnimalManager {
         }
     }
 
+
     public void showAnimals() {
-        System.out.println("-------------------------------------------------------------");
-        System.out.printf("| %3s | %-8s | %-18s | %-8s | %-8s |\n", 
-                "Nr.","Species", "Breed", "Price", "Reserved");
-        System.out.println("-------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
+        System.out.printf("| %3s | %-8s | %-18s | %-8s | %-9s |\n", 
+                "Nr.","Species", "Breed", "Price", "Status");
+        System.out.println("--------------------------------------------------------------");
 
         for (Animal animal : animals) { 
-            System.out.printf("| %3d | %-8s | %-18s | %-8.2f | %-8s |\n",
+            System.out.printf("| %3d | %-8s | %-18s | %-8.2f | %-9s |\n",
                     animal.getNumber(), animal.getSpecies() , animal.getBreed(),
-                    animal.getPrice(), animal.isReserved());
+                    animal.getPrice(), animal.isReserved()? "reserved" : "available");
         }
-
-        System.out.println("-------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------");
     }
 
-    
+
+
+    public void sortByPrice(){
+        animals.sort(Comparator.comparing(Animal::getPrice));
+    }
+
+
+
+    public void filterAvailable(){
+        System.out.println("Available animals:");
+        System.out.println("--------------------------------------------------------------");
+        System.out.printf("| %3s | %-8s | %-18s | %-8s | %-9s |\n", 
+                "Nr", "Species", "Breed", "Price", "Status");
+        System.out.println("--------------------------------------------------------------");
+        for (Animal a : animals){
+            if(!a.isReserved()){
+                System.out.printf("| %3d | %-8s | %-18s | %-8.2f | %-9s |\n",
+                a.getNumber(), a.getSpecies() , a.getBreed(),
+                a.getPrice(), "available");
+            }
+        }
+        System.out.println("--------------------------------------------------------------");
+    }
 }

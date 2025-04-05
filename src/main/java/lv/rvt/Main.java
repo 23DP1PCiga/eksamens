@@ -22,11 +22,11 @@ public class Main {
        System.out.println("-------------------------------------------------------------------------------------------------------");
        System.out.println();
       
-       //AnimalManager animal = new AnimalManager();
-      // animal.showAnimals();
-       ProductManager product = new ProductManager();
-       product.sortByPrice();
-       product.showProducts();
+       AnimalManager animal = new AnimalManager();
+       animal.filterAvailable();
+     
+       //ProductManager product = new ProductManager();
+      // product.showProducts();
     }
 }
 

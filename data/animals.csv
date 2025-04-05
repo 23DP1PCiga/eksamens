@@ -3,7 +3,7 @@ Nr,Species,Breed,Price,Status
 2,Cat,Siamese,900,reserved
 3,Cat,British Shorthair,500,available
 4,Cat,Ragdoll,1300,available
-5,Cat,Bengal,1400,reserved
+5,Cat,Bengal,1400,available
 6,Cat,Sphynx,1500,available
 7,Dog,Golden Retriever,1500
 8,Dog,Labrador Retriever,1400,available
@@ -18,7 +18,7 @@ Nr,Species,Breed,Price,Status
 17,Parrot,Lovebird,300,reserved
 18,Parrot,Quaker Parrot,450,available
 19,Rabbit,Holland Lop,250,reserved
-20,Rabbit,Angora,500,reserved
+20,Rabbit,Angora,500,available
 21,Rabbit,Harlequin,450,available
 22,Rabbit,Dutch,275,available
 23,Rabbit,English Lop,325,reserved
