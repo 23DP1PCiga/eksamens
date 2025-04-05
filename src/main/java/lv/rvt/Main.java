@@ -22,9 +22,10 @@ public class Main {
        System.out.println("-------------------------------------------------------------------------------------------------------");
        System.out.println();
       
-       AnimalManager animal = new AnimalManager();
-       animal.showAnimals();
+       //AnimalManager animal = new AnimalManager();
+      // animal.showAnimals();
        ProductManager product = new ProductManager();
+       product.sortByPrice();
        product.showProducts();
     }
 }
