@@ -1,20 +1,20 @@
 Nr,Species,Breed,Price,Status
 1,Cat,Maine Coon,1200,available
-2,Cat,Siamese,900,reserved
+2,Cat,Siamese,300,reserved
 3,Cat,British Shorthair,500,available
 4,Cat,Ragdoll,1300,available
 5,Cat,Bengal,1400,available
-6,Cat,Sphynx,1500,available
-7,Dog,Golden Retriever,1500
+6,Cat,Sphynx,950,available
+7,Dog,Golden Retriever,1100
 8,Dog,Labrador Retriever,1400,available
-9,Dog,French Bulldog,2000,available
-10,Dog,Poodle,1800,reserved
+9,Dog,French Bulldog,1250,available
+10,Dog,Poodle,1300,reserved
 11,Dog,Dachshund,1200,available
 12,Parrot,Parakeet,350,reserved
-13,Parrot,Amazon Parrot,2200,available
-14,Parrot,Eclectus,2700,available
+13,Parrot,Amazon Parrot,220,available
+14,Parrot,Eclectus,270,available
 15,Parrot,Conure,600,reserved
-16,Parrot,Hyacinth Macaw,5000,available
+16,Parrot,Hyacinth Macaw,500,available
 17,Parrot,Lovebird,300,reserved
 18,Parrot,Quaker Parrot,450,available
 19,Rabbit,Holland Lop,250,reserved

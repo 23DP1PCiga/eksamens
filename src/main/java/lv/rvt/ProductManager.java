@@ -56,7 +56,7 @@ public class ProductManager {
     }
 
     public void searchByName(String keyword){
-        System.out.println("Results");
+        System.out.println("Results:");
         System.out.println("---------------------------------------------------------");
         System.out.printf("| %3s | %-23s | %-12s | %-6s |\n", 
                 "Nr.","Name", "Category", "Price");
