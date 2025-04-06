@@ -54,4 +54,25 @@ public class ProductManager {
     public void sortByPrice(){
         products.sort(Comparator.comparing(Product::getPrice));
     }
+
+    public void searchByName(String keyword){
+        System.out.println("Results");
+        System.out.println("---------------------------------------------------------");
+        System.out.printf("| %3s | %-23s | %-12s | %-6s |\n", 
+                "Nr.","Name", "Category", "Price");
+        System.out.println("---------------------------------------------------------");
+
+        boolean found = false;
+        for(Product p : products){
+            if(p.getName().toLowerCase() .contains(keyword.toLowerCase())){
+                System.out.printf("| %3d | %-23s | %-12s | %-6.2f |\n",
+                    p.getNumber(),p.getName(), p.getCategory(), p.getPrice());
+                    found = true;
+            }
+        }
+        if(!found){
+            System.out.println("|                 No results found                      |");
+        }
+        System.out.println("---------------------------------------------------------"); 
+    }
 }
