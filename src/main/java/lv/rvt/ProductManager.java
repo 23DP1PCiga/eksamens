@@ -36,6 +36,7 @@ public class ProductManager {
         }
     }
 
+    //1
     public void showProducts() {
         System.out.println("---------------------------------------------------------");
         System.out.printf("| %3s | %-23s | %-12s | %-6s |\n", 
@@ -51,10 +52,47 @@ public class ProductManager {
         System.out.println("---------------------------------------------------------"); 
     }
 
-    public void sortByPrice(){
-        products.sort(Comparator.comparing(Product::getPrice));
+      //2
+      public void sortByCategory(String category){
+        System.out.println("Products in" + category + "category: ");
+        System.out.println("---------------------------------------------------------");
+        System.out.printf("| %3s | %-23s | %-12s | %-6s |\n", 
+                "Nr.","Name", "Category", "Price");
+        System.out.println("---------------------------------------------------------");
+
+        boolean found = false;
+        for(Product p : products){
+            if(p.getCategory().toLowerCase().equalsIgnoreCase(category)){
+                System.out.printf("| %3d | %-23s | %-12s | %-6.2f |\n",
+                    p.getNumber(),p.getName(), p.getCategory(), p.getPrice());
+                    found = true;
+            }
+        }
+        if(!found){
+            System.out.println("|                 No results found                      |");
+        }
+        System.out.println("---------------------------------------------------------"); 
     }
 
+    //3
+    public void sortByPrice(String word){
+        word = word.trim().toLowerCase();
+        switch (word) {
+            case "c":
+                products.sort(Comparator.comparing(Product::getPrice));
+                showProducts();
+                break;
+            case "e":
+                products.sort(Comparator.comparing(Product::getPrice).reversed());
+                showProducts();
+                break;
+            default:
+                System.out.println("Invalid input!");
+        }
+    }
+    
+
+    //4
     public void searchByName(String keyword){
         System.out.println("Results:");
         System.out.println("---------------------------------------------------------");
@@ -75,4 +113,6 @@ public class ProductManager {
         }
         System.out.println("---------------------------------------------------------"); 
     }
+
 }
+

@@ -29,7 +29,6 @@ public class Main {
        }
     }
 
-
     private static void printMainMenu() {
         clearConsole();
         printBanner();
@@ -40,7 +39,6 @@ public class Main {
         System.out.println("Your choice: ");    
     }
     
-
     private static void animalMenu(){
         while (true) {
             clearConsole();
@@ -57,16 +55,15 @@ public class Main {
             switch (input) {
                 case "1":
                     animal.showAnimals();
-                    waitFor();
                     break;
                 case "2":
+                    System.out.println(" *Enter 'c' to sort from cheapest to most expensive");
+                    System.out.println(" *Enter 'e' to sort from most expensive to cheapest ");
+                    String ans = scanner.nextLine();
                     animal.sortByPrice();
-                    animal.showAnimals();
-                    waitFor();
                     break;
                 case "3":
                     animal.filterAvailable();
-                    waitFor();
                     break;
                 case "4":
                      //reserveAnimal()
@@ -82,34 +79,39 @@ public class Main {
 
     private static void productMenu(){
         while (true) {
-            clearConsole();
+            //clearConsole();
             printBanner();
             System.out.println("Product menu: ");
             System.out.println("1. Show all products");
-            System.out.println("2. Sort products by price");
-            System.out.println("3. Search by name");
-            System.out.println("4. Buy products");
+            System.out.println("2. Filter products by category");
+            System.out.println("3. Sort products by price");
+            System.out.println("4. Search by name");
+            System.out.println("5. Buy products");
             System.out.println("0. Back to main menu");
             System.out.println("Your choice: ");
             String input = scanner.nextLine();
 
             switch (input) {
                 case "1":
-                    product.showProducts();
-                    waitFor();
-                    break;
+                product.showProducts();
                 case "2":
-                    product.sortByPrice();
-                    product.showProducts();
-                    waitFor();
+                    System.out.println("Categories: \n  *Care \n  *Accessories \n  *Feed");
+                    System.out.println("Enter category to filter : ");
+                    String choice = scanner.nextLine();
+                    product.sortByCategory(choice);
                     break;
                 case "3":
+                    System.out.println(" *Enter 'c' to sort from cheapest to most expensive");
+                    System.out.println(" *Enter 'e' to sort from most expensive to cheapest ");
+                    String ans = scanner.nextLine();
+                    product.sortByPrice(ans);
+                    break;
+                case "4":
                     System.out.println("Enter name to search: ");
                     String name = scanner.nextLine();
                     product.searchByName(name);
-                    waitFor();
                     break;
-                case "4":
+                case "5":
                     //buyProduct();
                     //waitFor();
                     //break;
@@ -122,20 +124,16 @@ public class Main {
     }
 
     public static void clearConsole() {
-        try {
-            if (System.getProperty("os.name").contains("Windows")) {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } else {
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (Exception e) {
-            System.out.println("Could not clear the console.");
-        }
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
+    private static void waitForEnter() {
+        System.out.println("\nPress Enter to continue...");
+        scanner.nextLine();
+    }    
 
     public static void printBanner(){
-        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------------------");
         System.out.println("                     __          __  _                            _           ");
         System.out.println("                     \\ \\        / / | |                          | |          ");
         System.out.println("                      \\ \\  /\\  / /__| | ___ ___  _ __ ___   ___  | |_ ___     ");
@@ -149,14 +147,11 @@ public class Main {
         System.out.println("                      \\__,_|_| |_|_|_| |_| |_|\\__,_|_| |___/_| |_|\\___/| .__/ ");
         System.out.println("                                                                       | |    ");
         System.out.println("                                                                       |_|    ");
-        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------------------");
         System.out.println();
         }
 
-        private static void waitFor(){
-            System.out.println("Press enter to continue...");
-            scanner.nextLine();
-        }
+        
 }
 
    
