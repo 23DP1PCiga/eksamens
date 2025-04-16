@@ -60,7 +60,7 @@ public class Main {
                     System.out.println(" *Enter 'c' to sort from cheapest to most expensive");
                     System.out.println(" *Enter 'e' to sort from most expensive to cheapest ");
                     String ans = scanner.nextLine();
-                    animal.sortByPrice();
+                    animal.sortByPrice(ans);
                     break;
                 case "3":
                     animal.filterAvailable();

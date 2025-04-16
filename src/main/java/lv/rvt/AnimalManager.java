@@ -53,12 +53,23 @@ public class AnimalManager {
 
 
 
-    public void sortByPrice(){
-        animals.sort(Comparator.comparing(Animal::getPrice));
+   //2
+   public void sortByPrice(String word){
+    word = word.trim().toLowerCase();
+    switch (word) {
+        case "c":
+            animals.sort(Comparator.comparing(Animal::getPrice));
+            showAnimals();
+            break;
+        case "e":
+            animals.sort(Comparator.comparing(Animal::getPrice).reversed());
+            showAnimals();
+            break;
+        default:
+            System.out.println("Invalid input!");
     }
-
-
-
+}
+//3
     public void filterAvailable(){
         System.out.println("Available animals:");
         System.out.println("--------------------------------------------------------------");
