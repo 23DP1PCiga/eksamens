@@ -55,20 +55,23 @@ public class Main {
             switch (input) {
                 case "1":
                     animal.showAnimals();
+                    waitForEnter();
                     break;
                 case "2":
                     System.out.println(" *Enter 'c' to sort from cheapest to most expensive");
                     System.out.println(" *Enter 'e' to sort from most expensive to cheapest ");
                     String ans = scanner.nextLine();
                     animal.sortByPrice(ans);
+                    waitForEnter();
                     break;
                 case "3":
                     animal.filterAvailable();
+                    waitForEnter();
                     break;
                 case "4":
-                     //reserveAnimal()
-                     //waitFor();
-                     //break;
+                     animal.reserveAnimal(scanner);
+                     waitForEnter();
+                     break;
                 case "0":
                     return;
                 default:
@@ -79,7 +82,7 @@ public class Main {
 
     private static void productMenu(){
         while (true) {
-            //clearConsole();
+            clearConsole();
             printBanner();
             System.out.println("Product menu: ");
             System.out.println("1. Show all products");
@@ -94,26 +97,30 @@ public class Main {
             switch (input) {
                 case "1":
                 product.showProducts();
+                waitForEnter();
                 case "2":
                     System.out.println("Categories: \n  *Care \n  *Accessories \n  *Feed");
                     System.out.println("Enter category to filter : ");
                     String choice = scanner.nextLine();
                     product.sortByCategory(choice);
+                    waitForEnter();
                     break;
                 case "3":
                     System.out.println(" *Enter 'c' to sort from cheapest to most expensive");
                     System.out.println(" *Enter 'e' to sort from most expensive to cheapest ");
                     String ans = scanner.nextLine();
                     product.sortByPrice(ans);
+                    waitForEnter();
                     break;
                 case "4":
                     System.out.println("Enter name to search: ");
                     String name = scanner.nextLine();
                     product.searchByName(name);
+                    waitForEnter();
                     break;
                 case "5":
                     //buyProduct();
-                    //waitFor();
+                    //waitForEnter();
                     //break;
                 case "0":
                     return;
@@ -134,19 +141,14 @@ public class Main {
 
     public static void printBanner(){
         System.out.println("-----------------------------------------------------------------------------------------------------------");
-        System.out.println("                     __          __  _                            _           ");
-        System.out.println("                     \\ \\        / / | |                          | |          ");
-        System.out.println("                      \\ \\  /\\  / /__| | ___ ___  _ __ ___   ___  | |_ ___     ");
-        System.out.println("                       \\ \\/  \\/ / _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\    ");
-        System.out.println("                        \\  /\\  /  __/ | (_| (_) | | | | | |  __/ | || (_) |   ");
-        System.out.println("                         \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/    ");
-        System.out.println("                                 (_)               | |     | |                ");
-        System.out.println("                       __ _ _ __  _ _ __ ___   __ _| |  ___| |__   ___  _ __  ");
-        System.out.println("                      / _` | '_ \\| | '_ ` _ \\ / _` | | / __| '_ \\ / _ \\| '_ \\ ");
-        System.out.println("                     | (_| | | | | | | | | | | (_| | | \\__ \\ | | | (_) | |_) |");
-        System.out.println("                      \\__,_|_| |_|_|_| |_| |_|\\__,_|_| |___/_| |_|\\___/| .__/ ");
-        System.out.println("                                                                       | |    ");
-        System.out.println("                                                                       |_|    ");
+        System.out.println(" _    _      _                            _                      _                 _       _                 ");
+        System.out.println("| |  | |    | |                          | |                    (_)               | |     | |                ");
+        System.out.println("| |  | | ___| | ___ ___  _ __ ___   ___  | |_ ___     __ _ _ __  _ _ __ ___   __ _| |  ___| |__   ___  _ __  ");
+        System.out.println("| |/\\| |/ _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\   / _` | '_ \\| | '_ ` _ \\ / _` | | / __| '_ \\ / _ \\| '_ \\ ");
+        System.out.println("\\  /\\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | (_| | | | | | | | | | | (_| | | \\__ \\ | | | (_) | |_) |");
+        System.out.println(" \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/   \\__,_|_| |_|_|_| |_| |_|\\__,_|_| |___/_| |_|\\___/| .__/ ");
+        System.out.println("                                                                                                      | |    ");
+        System.out.println("                                                                                                      |_|    ");
         System.out.println("-----------------------------------------------------------------------------------------------------------");
         System.out.println();
         }

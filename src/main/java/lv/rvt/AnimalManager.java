@@ -2,9 +2,12 @@ package lv.rvt;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
+
 import lv.rvt.tools.Helper;
 
 public class AnimalManager {
@@ -51,8 +54,6 @@ public class AnimalManager {
         System.out.println("--------------------------------------------------------------");
     }
 
-
-
    //2
    public void sortByPrice(String word){
     word = word.trim().toLowerCase();
@@ -84,5 +85,44 @@ public class AnimalManager {
             }
         }
         System.out.println("--------------------------------------------------------------");
+    }
+
+//4
+    public void saveAnimals(){
+        try (PrintWriter writer = new PrintWriter("animals.csv")){
+            writer.println("Number,Species,Breed,Price,Reserved");
+            for(Animal a:animals){
+                writer.printf("%d,%s,%s,%.2f,%s\n",
+                a.getNumber(),a.getSpecies(),a.getBreed(),a.getPrice(),a.isReserved()? "reserved": "available");
+            }
+        }
+        catch(IOException e){
+            System.out.println("Failed to save changes: " + e.getMessage());
+        }
+    }
+
+    public void reserveAnimal(Scanner scanner){
+        showAnimals();
+        System.out.print("Enter animal number to reserve: ");
+        try{
+            int number = Integer.parseInt(scanner.nextLine().trim());
+            for(Animal a : animals){
+                if(a.getNumber() == number){
+                    if (a.isReserved()){
+                        System.out.println("This animal is already reserved");
+                    }
+                    else{
+                        a.setReserved(true);
+                        saveAnimals();
+                        System.out.println("Animal successfully reserved!");
+                    }
+                    return;
+                }
+            }
+            System.out.println("Animal with that number not found");
+        }
+        catch(NumberFormatException e){
+            System.out.println("Invalid input");
+        }
     }
 }

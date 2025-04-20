@@ -1,0 +1,23 @@
+Number,Species,Breed,Price,Reserved
+1,Cat,Maine Coon,1200.00,reserved
+2,Cat,Siamese,300.00,reserved
+3,Cat,British Shorthair,500.00,available
+4,Cat,Ragdoll,1300.00,available
+5,Cat,Bengal,1400.00,available
+6,Cat,Sphynx,950.00,available
+8,Dog,Labrador Retriever,1400.00,available
+9,Dog,French Bulldog,1250.00,available
+10,Dog,Poodle,1300.00,reserved
+11,Dog,Dachshund,1200.00,available
+12,Parrot,Parakeet,350.00,reserved
+13,Parrot,Amazon Parrot,220.00,available
+14,Parrot,Eclectus,270.00,available
+15,Parrot,Conure,600.00,reserved
+16,Parrot,Hyacinth Macaw,500.00,available
+17,Parrot,Lovebird,300.00,reserved
+18,Parrot,Quaker Parrot,450.00,available
+19,Rabbit,Holland Lop,250.00,reserved
+20,Rabbit,Angora,500.00,available
+21,Rabbit,Harlequin,450.00,available
+22,Rabbit,Dutch,275.00,available
+23,Rabbit,English Lop,325.00,reserved
