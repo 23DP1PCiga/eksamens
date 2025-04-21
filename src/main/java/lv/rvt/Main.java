@@ -24,7 +24,16 @@ public class Main {
             /*case "3":
                 balanceMenu();
                 break;
-            */     
+            */   
+            case "4":
+                user.showCartSummary();
+                System.out.println("Confirm purchase? (yes/no): ");
+                String confirm = scanner.nextLine().trim().toLowerCase();
+                if (confirm.equals("yes")) {
+                    user.checkout();
+                }
+                waitForEnter();
+                break;  
             case "0":
                 System.out.println("Bye bye!");
                 return;
@@ -41,6 +50,7 @@ public class Main {
         System.out.println("1. Manage animals");
         System.out.println("2. Manage products");
         //System.out.println("3. View / Add balance");
+        System.out.println("4. View cart and checkout");
         System.out.println("0. Exit");
         System.out.println("Your choice: ");    
     }
@@ -75,7 +85,7 @@ public class Main {
                     waitForEnter();
                     break;
                 case "4":
-                     animal.reserveAnimal(scanner , user);
+                     animal.reserveAnimalToCart(scanner, user);
                      waitForEnter();
                      break;
                 case "0":
@@ -95,7 +105,7 @@ public class Main {
             System.out.println("2. Filter products by category");
             System.out.println("3. Sort products by price");
             System.out.println("4. Search by name");
-            System.out.println("5. Buy products");
+            System.out.println("5. Add products to cart");
             System.out.println("0. Back to main menu");
             System.out.println("Your choice: ");
             String input = scanner.nextLine();
@@ -125,9 +135,9 @@ public class Main {
                     waitForEnter();
                     break;
                 case "5":
-                    //product.buyProduct(scanner , user);
-                    //waitForEnter();
-                    //break;
+                    product.addProductToCart(scanner, user);
+                    waitForEnter();
+                    break;
                 case "0":
                     return;
                 default:

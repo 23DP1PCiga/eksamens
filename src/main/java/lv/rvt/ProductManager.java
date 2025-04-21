@@ -117,27 +117,32 @@ public class ProductManager {
     }
 
     //5
-    public void buyProduct(Scanner scanner , User user){
-        showProducts();
-        System.out.println("Enter product number to buy: ");
-        try{
-             int number = Integer.parseInt(scanner.nextLine().trim());
-             for (Product p : products){
-                if(p.getNumber() == number){
-                    if(user.makePurchase(p.getPrice())){
-                        System.out.printf("You bought '%s' for %.2f. Remaining balance: %.2f\n" ,
-                        p.getName() , p.getPrice() , user.getBalance());
-                    }
-                    else{
-                        System.out.println("Not enough balance to buy this product!");
-                    }
-                    return;
+    public void addProductToCart(Scanner scanner, User user){
+        while (true) {
+            showProducts();
+            System.out.println("Enter product number to add to cart (or 0 to finish): ");
+            try {
+                int number = Integer.parseInt(scanner.nextLine().trim());
+                if (number == 0) {
+                    System.out.println("Finished adding products to cart.");
+                    break;
                 }
-             }
-             System.out.println("Product with this number not found");
+                boolean found = false;
+                for (Product p : products) {
+                    if (p.getNumber() == number) {
+                        user.addToCart(p);
+                        System.out.printf("Product '%s' added to cart.\n", p.getName());
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    System.out.println(" Product with that number not found.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println(" Invalid input.");
+            }
         }
-        catch(NumberFormatException e){
-            System.out.println("Invalid input");
     }
-  }
+    
 }

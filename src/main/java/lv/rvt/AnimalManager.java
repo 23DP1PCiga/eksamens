@@ -100,32 +100,38 @@ public class AnimalManager {
             System.out.println("Failed to save changes: " + e.getMessage());
         }
     }
-
-    public void reserveAnimal(Scanner scanner, User user){
-        showAnimals();
-        System.out.print("Enter animal number to reserve (costs 50.00): ");
-        try{
+//4
+public void reserveAnimalToCart(Scanner scanner, User user){
+    filterAvailable();
+    System.out.println("Each animal reservation costs 50.0");
+    System.out.println();
+    System.out.println("Enter animal number to add to cart (or 0 to finish) ");
+    while (true) {
+        System.out.print(" Your enter: ");
+        try {
             int number = Integer.parseInt(scanner.nextLine().trim());
-            for(Animal a : animals){
-                if(a.getNumber() == number){
-                    if (a.isReserved()){
-                        System.out.println("This animal is already reserved");
-                    }
-                    else if (user.makePurchase(50.00)){
-                        a.setReserved(true);
-                        saveAnimals();
-                        System.out.println("Animal successfully reserved for 50.00!");
-                    }
-                    else{
-                        System.out.println("Not enough balance to reserve animal!");
-                    }
-                    return;
+            if (number == 0) {
+                System.out.println("Finished reserving animals.");
+                break;
+            }
+            boolean found = false;
+            for (Animal a : animals  ) {
+                if (a.getNumber() == number && !a.isReserved()) {
+                    user.reserveAnimal(a);
+                    System.out.printf("Animal '%s - %s' added to cart for reservation.\n",
+                            a.getSpecies(), a.getBreed());
+                    found = true;
+                    break;
                 }
             }
-            System.out.println("Animal with that number not found");
-        }
-        catch(NumberFormatException e){
-            System.out.println("Invalid input");
+            if (!found) {
+                System.out.println(" Animal with that number is already reserved!");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(" Invalid input.");
         }
     }
+}
+
+    
 }

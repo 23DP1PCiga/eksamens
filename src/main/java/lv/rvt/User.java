@@ -23,13 +23,7 @@ public void addToCart(Product product){
 }
 
 public void reserveAnimal(Animal animal){
-    if(reservedAnimal != null){
-        System.out.println("You have already reserved an animal.");
-    }
-    else{
-        reservedAnimal = animal;
-        System.out.println("Animal reserved: " + animal.getSpecies() + " - " + animal.getBreed());
-    }
+    reservedAnimal = animal;
 }
 
 public void showCartSummary(){
