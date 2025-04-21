@@ -26,20 +26,29 @@ public void reserveAnimal(Animal animal){
     reservedAnimal = animal;
 }
 
-public void showCartSummary(){
+public void showCartSummary() {
     double total = 0;
-    System.out.println("\n------ Purchase Summary ------");
-    for (Product p : cart){
-        System.out.printf("Product: %-20s Price: %.2f\n" , p.getName() , p.getPrice());
+    System.out.println("\n================== Purchase Summary ==================");
+    System.out.printf("| %-25s | %-15s |\n", "Item", "Price");
+    System.out.println("------------------------------------------------------");
+
+    for (Product p : cart) {
+        System.out.printf("| %-25s | %15.2f |\n", p.getName(), p.getPrice());
         total += p.getPrice();
     }
-    if (reservedAnimal != null){
-        System.out.printf("Reserved animal: %-15s %-15s Price: %.2f\n" ,
-        reservedAnimal.getSpecies() , reservedAnimal.getBreed() , 50.00);
-        total += 50.0;
+
+    if (reservedAnimal != null) {
+        String animalName = reservedAnimal.getSpecies() + " - " + reservedAnimal.getBreed();
+        System.out.printf("| %-25s | %15.2f |\n", "Animal: " + animalName, 50.00);
+        total += 50.00;
     }
-    System.out.printf("TOTAL: %.2f\n" , total);
+
+    System.out.println("------------------------------------------------------");
+    System.out.printf("| %-25s | %15.2f |\n", "TOTAL", total);
+    System.out.println("======================================================");
 }
+
+
 
 public void checkout(){
     double total = 0;
