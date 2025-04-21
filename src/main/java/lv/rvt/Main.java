@@ -7,6 +7,7 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static AnimalManager animal = new AnimalManager();
     private static ProductManager product = new ProductManager();
+    private static User user = new User(100);
     public static void main(String[] args) {
       
        while (true) {
@@ -20,6 +21,10 @@ public class Main {
             case "2":
                 productMenu();
                 break;
+            /*case "3":
+                balanceMenu();
+                break;
+            */     
             case "0":
                 System.out.println("Bye bye!");
                 return;
@@ -35,6 +40,7 @@ public class Main {
         System.out.println("Choose an option:");
         System.out.println("1. Manage animals");
         System.out.println("2. Manage products");
+        //System.out.println("3. View / Add balance");
         System.out.println("0. Exit");
         System.out.println("Your choice: ");    
     }
@@ -69,7 +75,7 @@ public class Main {
                     waitForEnter();
                     break;
                 case "4":
-                     animal.reserveAnimal(scanner);
+                     animal.reserveAnimal(scanner , user);
                      waitForEnter();
                      break;
                 case "0":
@@ -119,7 +125,7 @@ public class Main {
                     waitForEnter();
                     break;
                 case "5":
-                    //buyProduct();
+                    //product.buyProduct(scanner , user);
                     //waitForEnter();
                     //break;
                 case "0":

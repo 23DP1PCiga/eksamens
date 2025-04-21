@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
+
 import lv.rvt.tools.Helper;
 
 public class ProductManager {
@@ -114,5 +116,28 @@ public class ProductManager {
         System.out.println("---------------------------------------------------------"); 
     }
 
+    //5
+    public void buyProduct(Scanner scanner , User user){
+        showProducts();
+        System.out.println("Enter product number to buy: ");
+        try{
+             int number = Integer.parseInt(scanner.nextLine().trim());
+             for (Product p : products){
+                if(p.getNumber() == number){
+                    if(user.makePurchase(p.getPrice())){
+                        System.out.printf("You bought '%s' for %.2f. Remaining balance: %.2f\n" ,
+                        p.getName() , p.getPrice() , user.getBalance());
+                    }
+                    else{
+                        System.out.println("Not enough balance to buy this product!");
+                    }
+                    return;
+                }
+             }
+             System.out.println("Product with this number not found");
+        }
+        catch(NumberFormatException e){
+            System.out.println("Invalid input");
+    }
+  }
 }
-

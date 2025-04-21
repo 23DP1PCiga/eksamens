@@ -101,9 +101,9 @@ public class AnimalManager {
         }
     }
 
-    public void reserveAnimal(Scanner scanner){
+    public void reserveAnimal(Scanner scanner, User user){
         showAnimals();
-        System.out.print("Enter animal number to reserve: ");
+        System.out.print("Enter animal number to reserve (costs 50.00): ");
         try{
             int number = Integer.parseInt(scanner.nextLine().trim());
             for(Animal a : animals){
@@ -111,10 +111,13 @@ public class AnimalManager {
                     if (a.isReserved()){
                         System.out.println("This animal is already reserved");
                     }
-                    else{
+                    else if (user.makePurchase(50.00)){
                         a.setReserved(true);
                         saveAnimals();
-                        System.out.println("Animal successfully reserved!");
+                        System.out.println("Animal successfully reserved for 50.00!");
+                    }
+                    else{
+                        System.out.println("Not enough balance to reserve animal!");
                     }
                     return;
                 }
