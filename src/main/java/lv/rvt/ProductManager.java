@@ -1,7 +1,6 @@
 package lv.rvt;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -56,7 +55,7 @@ public class ProductManager {
 
       //2
       public void sortByCategory(String category){
-        System.out.println("Products in" + category + "category: ");
+        System.out.println("Products in " + category + " category: ");
         System.out.println("---------------------------------------------------------");
         System.out.printf("| %3s | %-23s | %-12s | %-6s |\n", 
                 "Nr.","Name", "Category", "Price");
@@ -120,11 +119,12 @@ public class ProductManager {
     public void addProductToCart(Scanner scanner, User user){
         while (true) {
             showProducts();
-            System.out.println("Enter product number to add to cart (or 0 to finish): ");
+            System.out.println();
+            System.out.print("Enter product number to add to cart (or 0 to finish): ");
             try {
                 int number = Integer.parseInt(scanner.nextLine().trim());
                 if (number == 0) {
-                    System.out.println("Finished adding products to cart.");
+                    System.out.println("Finished adding products to cart. ");
                     break;
                 }
                 boolean found = false;
