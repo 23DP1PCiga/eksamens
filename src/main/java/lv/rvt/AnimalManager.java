@@ -1,6 +1,5 @@
 package lv.rvt;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -103,11 +102,10 @@ public class AnimalManager {
 //4
 public void reserveAnimalToCart(Scanner scanner, User user){
     filterAvailable();
-    System.out.println("Each animal reservation costs 50.0");
+    System.out.println("\u001B[33mEach animal reservation costs 50.0");
     System.out.println();
-    System.out.println("Enter animal number to add to cart (or 0 to finish) ");
     while (true) {
-        System.out.print(" Your enter: ");
+        System.out.print("\u001B[37mEnter animal number to add to cart (or 0 to finish): ");
         try {
             int number = Integer.parseInt(scanner.nextLine().trim());
             if (number == 0) {
@@ -120,18 +118,16 @@ public void reserveAnimalToCart(Scanner scanner, User user){
                     user.reserveAnimal(a);
                     System.out.printf("Animal '%s - %s' added to cart for reservation.\n",
                             a.getSpecies(), a.getBreed());
+                    System.out.println();
                     found = true;
                     break;
                 }
             }
             if (!found) {
-                System.out.println(" Animal with that number is already reserved!");
+                System.out.println(" \u001B[91mAnimal with that number is already reserved! ");
             }
         } catch (NumberFormatException e) {
             System.out.println(" Invalid input.");
         }
     }
-}
-
-    
-}
+}    }
